@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Arcadia{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/styles/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     {% endblock %}
 </head>
 <body>
-    {% block header %}
-        {% include 'partials/_header.html.twig' %}
-    {% endblock %}
+    {% include 'partials/_header.html.twig' %}
 
-    {% block body %}{% endblock %}
+    <main id="main-page">
+        {% block body %}{% endblock %}
+    </main>
 
-    {% block footer %}
-        {% include 'partials/_footer.html.twig' %}
-    {% endblock %}
+    {% include 'partials/_footer.html.twig' %}
 
     {% block javascripts %}
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     {% endblock %}
 </body>
 </html>

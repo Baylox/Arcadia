@@ -19,6 +19,9 @@ class Zoo
     #[ORM\Column(length: 20)]
     private ?string $telephone = null;
 
+    #[ORM\ManyToOne]
+    private ?User $User = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Zoo
     public function setTelephone(string $telephone): static
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->User;
+    }
+
+    public function setUser(?User $User): static
+    {
+        $this->User = $User;
 
         return $this;
     }
